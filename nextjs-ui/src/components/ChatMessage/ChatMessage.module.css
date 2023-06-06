@@ -1,0 +1,28 @@
+.container {
+  cursor: default;
+  display: block;
+  padding: 0.4rem 0.8rem;
+  width: 100%;
+}
+
+.oldMEssage {
+  opacity: 0.7;
+}
+
+.when {
+  font-size: 0.7rem;
+  font-weight: 100;
+  color: #999;
+}
+
+.sender {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ccc;
+}
+
+.text {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: white;
+}

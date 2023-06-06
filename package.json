@@ -1,0 +1,30 @@
+{
+  "name": "realtime-chat-nextjs-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "author": "JoaoPauloCMarra <joaopaulocmarra@gmail.com> (http://webnexus.com.br/)",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=8"
+  },
+  "scripts": {
+    "preinstall": "only-allow pnpm",
+    "server:start": "pnpm --filter server start",
+    "ui:start": "pnpm --filter ui start",
+    "server:dev": "pnpm --filter server dev",
+    "ui:dev": "pnpm --filter ui dev",
+    "start": "pnpm --stream --parallel start",
+    "dev": "pnpm --stream --parallel dev",
+    "build": "pnpm --filter ui build",
+    "lint": "pnpm --filter server lint ; pnpm --filter ui lint",
+    "format": "pnpm --filter server format ; pnpm --filter ui format",
+    "test": "pnpm --filter server test ; pnpm --filter ui test",
+    "test:watch": "pnpm --filter server test:watch ; pnpm --filter ui test:watch"
+  },
+  "dependencies": {
+    "only-allow": "^1.1.1"
+  }
+}

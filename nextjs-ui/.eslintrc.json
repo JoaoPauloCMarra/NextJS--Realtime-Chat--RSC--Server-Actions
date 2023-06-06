@@ -1,0 +1,300 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2022": true,
+    "node": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:import/typescript",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended",
+    "prettier"
+  ],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "import", "jsx-a11y", "unused-imports", "prettier"],
+  "parserOptions": {
+    "project": true,
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "requireConfigFile": false,
+    "ecmaFeatures": {
+      "jsx": true,
+      "implicitArrowLinebreak": true
+    },
+    "warnOnUnsupportedTypeScriptVersion": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "default-case": "off",
+    "no-useless-constructor": "off",
+    "no-unused-expressions": "off",
+    "no-dupe-class-members": "off",
+    "no-use-before-define": "off",
+    "no-unused-vars": "off",
+    "no-redeclare": "off",
+    "no-undef": "off",
+    "no-else-return": "error",
+    "no-floating-decimal": "error",
+    "no-sequences": "error",
+    "no-console": "warn",
+    "semi": "error",
+    "dot-notation": "error",
+    "array-bracket-spacing": "error",
+    "computed-property-spacing": ["error", "never"],
+    "curly": "error",
+    "no-lonely-if": "error",
+    "no-unneeded-ternary": "error",
+    "one-var-declaration-per-line": "error",
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": false,
+        "avoidEscape": true
+      }
+    ],
+    "array-callback-return": "off",
+    "prefer-const": "error",
+
+    // TypeScript specific rules
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-return": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/consistent-type-assertions": "warn",
+    "@typescript-eslint/no-redeclare": "warn",
+    "@typescript-eslint/no-use-before-define": [
+      "warn",
+      {
+        "functions": false,
+        "classes": false,
+        "variables": false,
+        "typedefs": false
+      }
+    ],
+    "@typescript-eslint/no-unused-expressions": [
+      "error",
+      {
+        "allowShortCircuit": true,
+        "allowTernary": true,
+        "allowTaggedTemplates": true
+      }
+    ],
+    "@typescript-eslint/no-useless-constructor": "warn",
+    "@typescript-eslint/ban-types": "error",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+
+    // React specific rules
+    // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
+    "react/jsx-uses-vars": "warn",
+    "react/jsx-uses-react": "warn",
+    "react/jsx-no-useless-fragment": "warn",
+    "react/forbid-foreign-prop-types": ["warn", { "allowInPropTypes": true }],
+    "react/jsx-no-comment-textnodes": "warn",
+    "react/jsx-no-duplicate-props": "warn",
+    "react/jsx-no-target-blank": "warn",
+    "react/jsx-no-leaked-render": "error",
+    "react/jsx-no-undef": "error",
+    "react/jsx-pascal-case": [
+      "warn",
+      {
+        "allowAllCaps": true,
+        "ignore": []
+      }
+    ],
+    "react/no-danger-with-children": "warn",
+    "react/no-direct-mutation-state": "warn",
+    "react/no-is-mounted": "warn",
+    "react/no-typos": "error",
+    "react/require-render-return": "error",
+    "react/style-prop-object": "warn",
+    "react/jsx-key": "off",
+    "react/no-this-in-sfc": "error",
+    "react/no-unsafe": "off",
+    "react/jsx-fragments": ["error", "syntax"],
+    "react/jsx-curly-newline": [
+      "error",
+      {
+        "multiline": "consistent",
+        "singleline": "consistent"
+      }
+    ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": ["function-declaration", "function-expression", "arrow-function"],
+        "unnamedComponents": "function-expression"
+      }
+    ],
+    "react/jsx-closing-bracket-location": ["error", "line-aligned"],
+    "react/jsx-boolean-value": ["error", "never", { "always": [] }],
+    "react/jsx-curly-spacing": ["error", "never", { "allowMultiline": true }],
+    "react/jsx-indent-props": ["error", 2],
+    "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "multiline" }],
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "ignoreCase": true,
+        "callbacksLast": false,
+        "shorthandFirst": false,
+        "shorthandLast": false,
+        "noSortAlphabetically": false,
+        "reservedFirst": true
+      }
+    ],
+    "react/sort-comp": [
+      "error",
+      {
+        "order": [
+          "static-variables",
+          "static-methods",
+          "instance-variables",
+          "lifecycle",
+          "/^handle.+$/",
+          "/^on.+$/",
+          "getters",
+          "setters",
+          "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
+          "instance-methods",
+          "everything-else",
+          "rendering"
+        ],
+        "groups": {
+          "lifecycle": [
+            "displayName",
+            "propTypes",
+            "contextTypes",
+            "childContextTypes",
+            "mixins",
+            "statics",
+            "defaultProps",
+            "constructor",
+            "getDefaultProps",
+            "getInitialState",
+            "state",
+            "getChildContext",
+            "getDerivedStateFromProps",
+            "componentWillMount",
+            "UNSAFE_componentWillMount",
+            "componentDidMount",
+            "componentWillReceiveProps",
+            "UNSAFE_componentWillReceiveProps",
+            "shouldComponentUpdate",
+            "componentWillUpdate",
+            "UNSAFE_componentWillUpdate",
+            "getSnapshotBeforeUpdate",
+            "componentDidUpdate",
+            "componentDidCatch",
+            "componentWillUnmount"
+          ],
+          "rendering": ["/^render.+$/", "render"]
+        }
+      }
+    ],
+
+    // React hooks specific rules
+    // https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+
+    // import specific rules
+    // https://github.com/benmosher/eslint-plugin-import/tree/master/docs/rules
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "never",
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index", "unknown", "object", "type"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "next",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**",
+            "group": "external",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/first": "error",
+    "import/no-amd": "error",
+    "import/no-anonymous-default-export": "warn",
+    "import/no-webpack-loader-syntax": "error",
+    "import/no-named-as-default": "off",
+    "import/prefer-default-export": "off",
+
+    // jsx-a11y specific rules
+    "jsx-a11y/alt-text": "warn",
+    "jsx-a11y/anchor-has-content": "warn",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/aria-activedescendant-has-tabindex": "warn",
+    "jsx-a11y/aria-props": "warn",
+    "jsx-a11y/aria-proptypes": "warn",
+    "jsx-a11y/aria-role": ["warn", { "ignoreNonDOM": true }],
+    "jsx-a11y/aria-unsupported-elements": "warn",
+    "jsx-a11y/heading-has-content": "warn",
+    "jsx-a11y/iframe-has-title": "warn",
+    "jsx-a11y/img-redundant-alt": "warn",
+    "jsx-a11y/no-access-key": "warn",
+    "jsx-a11y/no-distracting-elements": "warn",
+    "jsx-a11y/no-redundant-roles": "warn",
+    "jsx-a11y/role-has-required-aria-props": "warn",
+    "jsx-a11y/role-supports-aria-props": "warn",
+    "jsx-a11y/scope": "warn",
+
+    // unused-imports
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}

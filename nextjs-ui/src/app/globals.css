@@ -1,0 +1,80 @@
+:root {
+  --max-width: 1100px;
+  --border-radius: 8px;
+  --font-size: 16px;
+
+  --danger: #dc3545;
+  --info: #007bff;
+
+  --body-bg: #252525;
+  --body-text-color: white;
+
+  --chat-bg: #333333;
+  --chat-text-color: white;
+
+  --input-background: #1c1c1c;
+  --input-text-color: white;
+  --input-border-radius: 4px;
+  --input-padding: 0.2rem 0.4rem;
+  --input-border: 0;
+  --input-outline: 0;
+
+  --button-background: #007bff;
+  --button-text-color: white;
+  --button-border-radius: 4px;
+  --button-padding: 0.6rem 0.8rem;
+  --button-border: 0;
+  --button-outline: 0;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: var(--font-size);
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--body-bg);
+  color: var(--body-text-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  border-radius: var(--input-border-radius);
+  background: var(--input-background);
+  color: var(--input-text-color);
+  padding: var(--input-padding);
+  border: var(--input-border);
+  outline: var(--input-outline);
+}
+
+input:is(:disabled) {
+  opacity: 0.7;
+}
+
+button {
+  border-radius: var(--button-border-radius);
+  background: var(--button-background);
+  color: var(--button-text-color);
+  padding: var(--button-padding);
+  border: var(--button-border);
+  outline: var(--button-outline);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:is(:disabled) {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

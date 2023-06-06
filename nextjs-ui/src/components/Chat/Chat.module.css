@@ -1,0 +1,30 @@
+.container {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 100%;
+  padding-top: 0.5rem;
+}
+
+.messages {
+  background: #000;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  padding: 0 0.2rem;
+  min-height: 200px;
+  max-height: 200px;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 400px;
+}
+
+.emptyMessage {
+  display: block;
+  font-size: 0.875rem;
+  opacity: 0.4;
+  padding: 1rem;
+  text-align: center;
+}

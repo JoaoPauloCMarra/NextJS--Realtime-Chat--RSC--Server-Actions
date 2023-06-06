@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: var(--max-width);
+  width: 100vw;
+  height: 100vh;
+}
+
+.message {
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 1rem;
+  max-width: 400px;
+  overflow: scroll;
+  padding: 1rem;
+}
