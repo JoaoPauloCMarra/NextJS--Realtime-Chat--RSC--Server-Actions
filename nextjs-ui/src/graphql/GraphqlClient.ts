@@ -1,10 +1,10 @@
 import { createClient as createWSClient } from 'graphql-ws';
 import { Client, cacheExchange, fetchExchange, subscriptionExchange } from 'urql';
 
-export const SERVER_URL = 'localhost:4000';
+const GRAPHQL_SERVER_URL = 'localhost:4000';
 
 const GraphqlClient = new Client({
-  url: `http://${SERVER_URL}`,
+  url: `http://${GRAPHQL_SERVER_URL}`,
   exchanges: [
     cacheExchange,
     fetchExchange,
@@ -14,7 +14,7 @@ const GraphqlClient = new Client({
         return {
           subscribe(sink) {
             const unsubscribe = createWSClient({
-              url: `ws://${SERVER_URL}`,
+              url: `ws://${GRAPHQL_SERVER_URL}`,
             }).subscribe(input, sink);
             return { unsubscribe };
           },

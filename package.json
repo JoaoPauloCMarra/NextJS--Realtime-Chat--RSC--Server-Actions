@@ -25,6 +25,7 @@
     "test:watch": "pnpm --filter server test:watch ; pnpm --filter ui test:watch"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "only-allow": "^1.1.1"
   }
 }

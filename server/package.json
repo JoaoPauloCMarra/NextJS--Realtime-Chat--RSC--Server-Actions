@@ -11,8 +11,8 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "ci": "npm-run-all codegen format lint test",
-    "dev": "set NODE_ENV=development && nodemon --watch \"src/*.*\" --exec \"ts-node\" ./src/index.ts",
-    "start": "set NODE_ENV=production && nodemon --watch \"src/*.*\" --exec \"ts-node\" ./src/index.ts"
+    "dev": "cross-env NODE_ENV=development nodemon --watch \"src/*.*\" --exec \"ts-node\" ./src/index.ts",
+    "start": "cross-env NODE_ENV=production nodemon --watch \"src/*.*\" --exec \"ts-node\" ./src/index.ts"
   },
   "jest": {
     "transform": {

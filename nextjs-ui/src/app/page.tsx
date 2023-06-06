@@ -1,7 +1,7 @@
 import { HomePage } from '@/components/pages/Home';
 import Providers from '@/context/Providers';
-import { SERVER_URL } from '@/graphql/GraphqlClient';
 
+const API_URL = 'http://localhost:3000';
 const ERROR_RESPONSES = {
   getAllMessages: 'Failed to fetch all chat messages',
   addMessage: 'Failed to create a new message',
@@ -12,10 +12,11 @@ const messagesSort = (a: ChatMessage, b: ChatMessage) => {
 };
 
 const getAllMessages = async (): Promise<ChatMessage[]> => {
-  const result = await fetch(`http://${SERVER_URL}/api`, {
-    method: 'GET',
+  const result = await fetch(`${API_URL}/api`, {
     cache: 'no-store',
   });
+
+  console.log(result);
 
   if (!result.ok) {
     throw new Error(ERROR_RESPONSES.getAllMessages);
@@ -32,7 +33,7 @@ const Home = async () => {
   const addMessage = async (params: AddMessageParams) => {
     'use server';
 
-    const result = await fetch(`http://${SERVER_URL}/api`, {
+    const result = await fetch(`${API_URL}/api`, {
       method: 'POST',
       body: JSON.stringify(params),
     });
