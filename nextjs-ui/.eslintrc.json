@@ -19,7 +19,16 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
-  "plugins": ["@typescript-eslint", "react", "react-hooks", "import", "jsx-a11y", "unused-imports", "prettier"],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "import",
+    "jsx-a11y",
+    "unused-imports",
+    "prettier",
+    "testing-library"
+  ],
   "parserOptions": {
     "project": true,
     "ecmaVersion": "latest",
@@ -44,6 +53,12 @@
       }
     }
   },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ],
   "rules": {
     "default-case": "off",
     "no-useless-constructor": "off",

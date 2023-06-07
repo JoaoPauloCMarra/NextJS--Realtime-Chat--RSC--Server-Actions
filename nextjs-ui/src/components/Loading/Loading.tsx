@@ -5,17 +5,20 @@ type Props = {
   full?: boolean;
 };
 
-const Loading: FC<Props> = ({ full }) => {
-  return (
-    <div className={`${styles.container}${full ? ` ${styles.containerFull}` : ''}`}>
-      <div className={styles.spinner}>
-        <div />
-        <div />
-        <div />
-        <div />
-      </div>
-    </div>
-  );
+export const testID = {
+  container: 'Loading',
+  spinner: 'Loading--Spinner',
 };
+
+const Loading: FC<Props> = ({ full }) => (
+  <div className={`${styles.container}${full ? ` ${styles.containerFull}` : ''}`} data-testid={testID.container}>
+    <div className={styles.spinner} data-testid={testID.spinner}>
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+);
 
 export default Loading;

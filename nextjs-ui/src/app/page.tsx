@@ -16,8 +16,6 @@ const getAllMessages = async (): Promise<ChatMessage[]> => {
     cache: 'no-store',
   });
 
-  console.log(result);
-
   if (!result.ok) {
     throw new Error(ERROR_RESPONSES.getAllMessages);
   }

@@ -9,6 +9,9 @@
   --body-bg: #252525;
   --body-text-color: white;
 
+  --loading-spinner-color: white;
+  --loading-spinner-size: 80px;
+
   --chat-bg: #333333;
   --chat-text-color: white;
 

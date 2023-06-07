@@ -3,8 +3,16 @@
 import { FC, KeyboardEventHandler, useCallback, useEffect, useRef, useState } from 'react';
 import styles from './Header.module.css';
 
+export const testID = {
+  container: 'Header',
+  userWelcome: 'Header--welcome',
+  logoutBtn: 'Header--logoutBtn',
+  loginBtn: 'Header--loginBtn',
+  nameInput: 'Header--nameInput',
+};
+
 type Props = {
-  user: User;
+  user?: User;
   onLogin?: (name: string) => void;
   onLogout?: () => void;
 };
@@ -20,6 +28,7 @@ const Header: FC<Props> = ({ user, onLogin, onLogout }) => {
   const submitLogin = useCallback(() => {
     const value = nameInputRef.current?.value;
     if (value && onLogin) {
+      setUsername('');
       onLogin(value);
     }
   }, [onLogin]);
@@ -40,14 +49,14 @@ const Header: FC<Props> = ({ user, onLogin, onLogout }) => {
   }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} data-testid={testID.container}>
       {user?.name ? (
         <div className={styles.logoutForm}>
-          <p>
+          <p data-testid={testID.userWelcome}>
             Welcome back, <span>{user?.name}</span>
           </p>
           <div className={styles.logoutBtnWrapper}>
-            <button className={styles.logout} onClick={onLogout} type="button">
+            <button className={styles.logout} data-testid={testID.logoutBtn} onClick={onLogout} type="button">
               logout
             </button>
           </div>
@@ -59,6 +68,7 @@ const Header: FC<Props> = ({ user, onLogin, onLogout }) => {
             <input
               ref={nameInputRef}
               className={styles.input}
+              data-testid={testID.nameInput}
               onChange={onUsernameChange}
               onKeyDown={onEnterPress}
               type="text"
@@ -66,7 +76,13 @@ const Header: FC<Props> = ({ user, onLogin, onLogout }) => {
             />
           </div>
           <div className={styles.headerActions}>
-            <button className={styles.login} disabled={username.length < 3} onClick={submitLogin} type="button">
+            <button
+              className={styles.login}
+              data-testid={testID.loginBtn}
+              disabled={username.length < 3}
+              onClick={submitLogin}
+              type="button"
+            >
               login
             </button>
           </div>

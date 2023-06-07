@@ -1,6 +1,12 @@
 import { FC, KeyboardEventHandler, memo, useCallback, useEffect, useRef } from 'react';
 import styles from './ChatInput.module.css';
 
+export const testID = {
+  container: 'ChatInput',
+  messageInput: 'ChatInput--messageInput',
+  submitButton: 'ChatInput--submitButton',
+};
+
 type Props = {
   onSubmit: (message: string) => void;
 };
@@ -34,15 +40,16 @@ const ChatInput: FC<Props> = ({ onSubmit }) => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid={testID.container}>
       <input
         ref={messageInputRef}
         className={styles.input}
+        data-testid={testID.messageInput}
         onKeyDown={onEnterPress}
         placeholder="write your message..."
         type="text"
       />
-      <button className={styles.submit} onClick={submitMessage} type="button">
+      <button className={styles.submit} data-testid={testID.submitButton} onClick={submitMessage} type="button">
         send
       </button>
     </div>

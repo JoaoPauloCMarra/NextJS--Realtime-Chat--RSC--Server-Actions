@@ -3,6 +3,12 @@ import { ChatInput } from '../ChatInput';
 import { ChatMessage } from '../ChatMessage';
 import styles from './Chat.module.css';
 
+export const testID = {
+  container: 'Chat',
+  messages: 'Chat--messages',
+  empty: 'Chat--empty',
+};
+
 type Props = {
   user: User;
   messages?: ChatMessage[];
@@ -36,12 +42,14 @@ const Chat: FC<Props> = ({ user, messages = [], addMessageMutation }) => {
   }, [user?.name, messages.length]);
 
   return (
-    <div className={styles.container}>
-      <div ref={messagesContainerRef} className={styles.messages}>
+    <div className={styles.container} data-testid={testID.container}>
+      <div ref={messagesContainerRef} className={styles.messages} data-testid={testID.messages}>
         {messages.length > 0 ? (
           Children.toArray(messages.map((item) => <ChatMessage data={item} />))
         ) : (
-          <span className={styles.emptyMessage}>no messages yet...</span>
+          <span className={styles.emptyMessage} data-testid={testID.empty}>
+            no messages yet...
+          </span>
         )}
       </div>
       <ChatInput onSubmit={onSubmitMessage} />
