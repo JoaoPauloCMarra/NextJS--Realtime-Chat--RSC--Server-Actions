@@ -1,4 +1,6 @@
 # Realtime Chat Application - Built with NextJS RSC & GraphQL
+![image](https://github.com/JoaoPauloCMarra/NextJS--Realtime-Chat--RSC--Server-Actions/assets/976151/0b9e2aac-e6b4-4603-b609-b6e18195a510)
+
 
 This repository contains the source code for a realtime chat application implemented using NextJS RSC (React Server Components) and GraphQL. This application is divided into two main sections: server (backend) and user interface (frontend).
 
